@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei's Student Management System</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        let userLogin = localStorage.getItem("userLogin");
+        if (!userLogin) {
+            window.location.href = "/login.html"
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="https://learn.rikkeiacademy.com/static/media/RIKKEI_ACADEMY_LOGO.e997e6f7.png" alt="">
+            <br>
+            <span>
+                <h4>Để nông dân biết code</h4>
+            </span>
+        </div>
+
+        <h1>HỆ THỐNG QUẢN LÝ SINH VIÊN RIKKEI</h1>
+    </header>
+    <section class="greetings">
+        Admin Page <p>Hello: <i class="userNameLogin"></i></p>
+        <button onclick="localStorage.removeItem('userLogin'); window.location.href = '/login.html';">Logout</button>
+        <script>
+            let user = JSON.parse(localStorage.getItem("userLogin"));
+            document.querySelector(".userNameLogin").innerText = user.userName;
+        </script>
+    </section>
+    <main>
+
+
+        <!-- MENU -->
+        <section class="menu">
+            <div class="item">
+                <i class="fa-solid fa-table-columns"></i>
+                <a href="http://127.0.0.1:5500/index.html">Bảng điều khiển</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-book"></i>
+                <a href="">Quản lý khóa học</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-house-circle-check"></i>
+                <a href="">Quản lý lớp học</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-users-rectangle"></i>
+                <a href="">Quản lý sinh viên</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-user"></i>
+                <a href="http://127.0.0.1:5500/account.html">Quản lý tài khoản</a>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+            <table>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-book"></i>
+                    </td>
+                    <td class="bold-text">Thống kê khóa học </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số khóa học</td>
+                    <td class="number">5</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-house-circle-check"></i>
+                    </td>
+                    <td class="bold-text">Thống kê khóa học </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số lớp học</td>
+                    <td class="number">20</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số lớp đang hoạt động</td>
+                    <td class="number">10</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số lớp đã kết thúc</td>
+                    <td class="number">4</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số lớp đang chờ</td>
+                    <td class="number">6</td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-users-rectangle"></i>
+                    </td>
+                    <td class="bold-text">Thống kê sinh viên </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Tổng số SV</td>
+                    <td class="number">1000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số SV chờ lớp</td>
+                    <td class="number">200</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số SV đang học</td>
+                    <td class="number">600</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số SV bảo lưu/đình chỉ</td>
+                    <td class="number">50</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Số SV tốt nghiệp</td>
+                    <td class="number">150</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div>Copyright Rikkei Academy @2023</div>
+    </footer>
+</body>
+
+</html>

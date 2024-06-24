@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+
+<body>
+    <form onsubmit="login(event)">
+        <input name="userName" type="text" placeholder="userName">
+        <input name="password" type="text" placeholder="password">
+        <button type="submit">login</button>
+    </form>
+
+    <script>
+        let userList = [
+            {
+                userName: "Le Van A",
+                password: 12345,
+            },
+            {
+                userName: "Le Van B",
+                password: 12345,
+            }
+        ];
+
+        localStorage.setItem("userList", JSON.stringify(userList))
+        function login(event) {
+            event.preventDefault();
+
+
+
+            let userName = event.target.userName.value;
+            let password = event.target.password.value;
+
+            let userList = JSON.parse(localStorage.getItem("userList"));
+
+
+            let userExisted = null;
+
+            for (let i = 0; i < userList.length; i++) {
+                if (userList[i].userName == userName) {
+                    userExisted = userList[i];
+                    break;
+                }
+            }
+
+            if (!userExisted) {
+                alert("user not found")
+                return
+            }
+
+            if (userExisted.password != password) {
+                alert("password incorrect")
+                return
+            }
+
+
+            alert("login succesfully")
+
+            localStorage.setItem("userLogin", JSON.stringify(userExisted))
+            window.location.href = "/index.html"
+        }
+    </script>
+</body>
+
+</html>

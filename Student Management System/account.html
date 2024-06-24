@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        thead {
+            background-color: rgb(107, 155, 233);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="https://learn.rikkeiacademy.com/static/media/RIKKEI_ACADEMY_LOGO.e997e6f7.png" alt="">
+            <br>
+            <span>
+                <h4>Để nông dân biết code</h4>
+            </span>
+        </div>
+
+        <h1>HỆ THỐNG QUẢN LÝ SINH VIÊN RIKKEI</h1>
+    </header>
+
+    <main>
+        <!-- MENU -->
+        <section class="menu">
+            <div class="item">
+                <i class="fa-solid fa-table-columns"></i>
+                <a href="http://127.0.0.1:5500/index.html">Bảng điều khiển</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-book"></i>
+                <a href="">Quản lý khóa học</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-house-circle-check"></i>
+                <a href="">Quản lý lớp học</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-users-rectangle"></i>
+                <a href="">Quản lý sinh viên</a>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-user"></i>
+                <a href="http://127.0.0.1:5500/account.html">Quản lý tài khoản</a>
+            </div>
+        </section>
+
+        <section class="account-management">
+            <div class="search-div">
+                <input type="text" placeholder="Nhập tài khoản tìm kiếm">
+                <button>Tìm kiếm</button>
+                Sắp xếp
+                <select name="arrange" id="arrange">
+                    <option value="Lựa chọn">Lựa chọn</option>
+                    <option value="Theo bảng chữ cái">Theo bảng chữ cái</option>
+                    <option value="Theo độ tuổi">Theo độ tuổi</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <td>STT</td>
+                    <td>Email</td>
+                    <td>Mật khẩu</td>
+                    <td>Họ và tên</td>
+                    <td>Trạng thái</td>
+                    <td>Hành động</td>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            Thêm người dùng mới
+            <form id="addUserForm">
+                <input type="text" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="password" required>
+                <input type="text" id="name" placeholder="Name" required>
+                <button type="submit">Thêm</button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <div>Copyright Rikkei Academy @2023</div>
+    </footer>
+
+    <script src="./account.js"></script>
+</body>
+
+</html>
